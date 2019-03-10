@@ -1,3 +1,5 @@
 FROM continuumio/miniconda
 
-RUN pip install mlflow
+ARG MLFLOW_VERSION
+
+RUN pip install mlflow==${MLFLOW_VERSION}
