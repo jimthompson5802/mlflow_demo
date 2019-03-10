@@ -1,0 +1,14 @@
+FROM mlflow_testbed:latest
+
+ADD install_R_mlflow.R /app
+
+RUN pip install xgboost && \
+      conda install -y jupyter matplotlib r-base r-essentials r-devtools && \
+      apt-get install -y unzip 
+
+ENV TAR /bin/tar 
+
+RUN R BATCH --no-save -f install_R_mlflow.R 
+
+# 
+      

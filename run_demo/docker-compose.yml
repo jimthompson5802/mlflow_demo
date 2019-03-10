@@ -1,0 +1,70 @@
+version: '3'
+
+
+
+services:
+
+# Python
+  python:
+    build: 
+      context: .
+      dockerfile: python_image/Dockerfile
+
+    image: mlflow_py_demo
+
+    ports:
+      - "8888:8888"
+
+    volumes:
+      - "/Users/jim/Desktop/databricks_mlflow/mlflow_demo:/opt/project"
+      - "/Users/jim/Desktop/databricks_mlflow/mlflow_server/artifacts:/artifacts"
+
+    # command to start jupyter notebook server
+    command: >
+       jupyter notebook --no-browser --ip 0.0.0.0 
+          --allow-root --password='' --NotebookApp.token=''
+          --notebook-dir=/opt/project
+
+# R
+  r:
+    build: 
+      context: .
+      dockerfile: mlflow_r_image/Dockerfile
+
+    image: mlflow_r_demo
+
+    
+    ports:
+      - "8787:8787"
+
+    environment:
+      DISABLE_AUTH:  'true'
+
+    volumes:
+      - "/Users/jim/Desktop/databricks_mlflow/mlflow_demo:/home/rstudio"
+      - "/Users/jim/Desktop/databricks_mlflow/mlflow_server/artifacts:/artifacts"
+
+
+# mlflow_tracker
+  mlflow_server:
+    build: 
+      context: .
+      dockerfile: mlflow_server/Dockerfile
+
+    image: mlflow_server
+    
+    ports:
+      - "5000:5000"
+
+    volumes:
+      - "/Users/jim/Desktop/databricks_mlflow/mlflow_server/tracking:/tracking"
+      - "/Users/jim/Desktop/databricks_mlflow/mlflow_server/artifacts:/artifacts"
+
+    command: >
+      mlflow server 
+        --file-store /tracking 
+        --default-artifact-root /artifacts 
+        --host 0.0.0.0
+
+
+    
