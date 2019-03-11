@@ -11,6 +11,8 @@ provide the run-time environment for this demonstration.
 * Docker
 * Docker Compose
 
+Work performed with Docker for Mac Version 2.0.0.3 (31259)
+
 
 ## Initial Setup
 * clone repo to local computer
