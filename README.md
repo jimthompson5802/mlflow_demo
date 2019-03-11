@@ -1,6 +1,7 @@
 # mlflow Demonstration
 
-This repo demonstrates the use of [mlflow](https://mlflow.org).  Docker containers
+This repo demonstrates the use of the open source project [mlflow](https://mlflow.org), which is used to record 
+and manage results of machine learning experiments.  Docker containers
 provide the run-time environment for this demonstration.
 
 ## Demonstration Environment
