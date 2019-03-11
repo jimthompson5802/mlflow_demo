@@ -1,4 +1,4 @@
-# mlflow Demonstrations
+# mlflow Demonstration
 
 This repo demonstrates the use of [mlflow](https://github.com/mlflow/mlflow).  Docker containers
 provide the run-time environment for this demonstration.
@@ -47,7 +47,7 @@ build of the three images.
 
 
 ## Start demonstration containers
-After building the three Docker images, navigate to ./run_demo
+After building the three Docker images, navigate to `./run_demo`
 * To bring up the three containers:
 ```
 docker-compose up --detach
