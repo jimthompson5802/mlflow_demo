@@ -15,8 +15,25 @@ Work performed with Docker for Mac Version 2.0.0.3 (31259)
 
 
 ## Initial Setup
-* clone repo to local computer
+* Clone repo to local computer.  Note directory for the local repo, e.g., `/home/user/mlflow_demo`
+* Create directory to hold mlflow tracking data and artifacts, e.g., `/home/userid/tracking`
 * Navigate to `./run_demo`
+* Update contents of `setup_environment_variables` to specify values for required directories.  If required specify 
+version of mlflow package.  See example below.
+```
+# version of mlflow to install in containers
+export MLFLOW_VERSION=0.8.2
+
+# directory containing demonstration source code
+export MLFLOW_DEMO_DIRECTORY=/home/user/mlflow_demo
+
+# directory to hold mlflow tracking and artifacts
+export MLFLOW_TRACKING_DIRECTORY=/home/userid/tracking
+
+```
+* After updating `setup_environment_variables`, execute following command to set environment variables:
+`. ./setup_environment_variables`
+
 * Run the following commands.  These commands are required 
 to initially build or rebuild the required Docker images.
 ```
