@@ -1,6 +1,6 @@
 # mlflow Demonstration
 
-This repo demonstrates the use of [mlflow](https://github.com/mlflow/mlflow).  Docker containers
+This repo demonstrates the use of [mlflow](https://mlflow.org).  Docker containers
 provide the run-time environment for this demonstration.
 
 ## Demonstration Environment
