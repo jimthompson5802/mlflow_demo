@@ -30,7 +30,7 @@ build the three images.
 * Navigate to ./run_demo
 * To bring up the three containers:
 ```
-docker-compose up
+docker-compose up --detach
 ```
 * To stop the three containers:
 ```
