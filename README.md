@@ -12,8 +12,6 @@ provide the run-time environment for this demonstration.
 * Docker Compose
 
 
-
-
 ## Initial Setup
 * clone repo to local computer
 * Navigate to `./run_demo`
