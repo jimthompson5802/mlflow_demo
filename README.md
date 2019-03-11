@@ -31,8 +31,8 @@ export MLFLOW_DEMO_DIRECTORY=/home/user/mlflow_demo
 export MLFLOW_TRACKING_DIRECTORY=/home/userid/tracking
 
 ```
-* After updating `setup_environment_variables`, execute following command to set environment variables:
-`. ./setup_environment_variables`
+* After updating `setup_environment_variables`, execute following command to set  
+environment variables: `. ./setup_environment_variables`
 
 * Run the following commands.  These commands are required 
 to initially build or rebuild the required Docker images.
