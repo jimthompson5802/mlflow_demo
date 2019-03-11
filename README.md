@@ -27,7 +27,7 @@ build of the three images.
 
 
 ## Start demonstration containers
-* Navigate to ./run_demo
+Navigate to ./run_demo
 * To bring up the three containers:
 ```
 docker-compose up --detach
