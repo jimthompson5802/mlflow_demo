@@ -15,8 +15,8 @@ services:
       - "8888:8888"
 
     volumes:
-      - "/Users/jim/Desktop/databricks_mlflow/mlflow_demo:/opt/project"
-      - "/Users/jim/Desktop/databricks_mlflow/mlflow_server/artifacts:/artifacts"
+      - "${MLFLOW_DEMO_DIRECTORY:-/tmp}:/opt/project"
+      - "${MLFLOW_TRACKING_DIRECTORY:-/tmp}:/artifacts"
 
     # command to start jupyter notebook server
     command: >
@@ -40,8 +40,8 @@ services:
       DISABLE_AUTH:  'true'
 
     volumes:
-      - "/Users/jim/Desktop/databricks_mlflow/mlflow_demo:/home/rstudio"
-      - "/Users/jim/Desktop/databricks_mlflow/mlflow_server/artifacts:/artifacts"
+      - "${MLFLOW_DEMO_DIRECTORY:-/tmp}:/opt/project"
+      - "${MLFLOW_TRACKING_DIRECTORY:-/tmp}:/artifacts"
 
 
 # mlflow_tracker
@@ -56,8 +56,8 @@ services:
       - "5000:5000"
 
     volumes:
-      - "/Users/jim/Desktop/databricks_mlflow/mlflow_server/tracking:/tracking"
-      - "/Users/jim/Desktop/databricks_mlflow/mlflow_server/artifacts:/artifacts"
+      - "${MLFLOW_DEMO_DIRECTORY:-/tmp}:/opt/project"
+      - "${MLFLOW_TRACKING_DIRECTORY:-/tmp}:/artifacts"
 
     command: >
       mlflow server 
