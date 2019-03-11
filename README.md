@@ -8,8 +8,8 @@ provide the run-time environment for this demonstration.
 
 
 ## System Requirements
-* Docker
-* Docker Compose
+* [Docker](https://docs.docker.com/develop/)
+* [Docker Compose](https://docs.docker.com/compose/overview/)
 
 Work performed with Docker for Mac Version 2.0.0.3 (31259)
 
