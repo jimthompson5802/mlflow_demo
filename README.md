@@ -36,3 +36,8 @@ docker-compose up --detach
 ```
 docker-compose down
 ```
+
+## Connecting to containers
+* Python Container:  `http://0.0.0.0:8888`
+* R Container: `http://0.0.0.0:8787`
+* mlflow tracking server: `http://0.0.0.0:5000`
