@@ -22,7 +22,7 @@ to initially build or rebuild the required Docker images.
 (cd mlflow_r_image && bash build_image)
 (cd mlflow_server && bash build_image)
 ```
-Note:  On a MacbookPro with 16GB RAM, it took about 14 minutes for the initial  
+Note:  On a MacbookPro with 16GB RAM, it took about 14 minutes for the initial 
 build of the three images.
 
 
