@@ -1,0 +1,50 @@
+###
+#
+#  THIS IS NOT PART OF MLFLOW FUNCTIONALITY
+#
+###
+
+global-run-time:
+  scorer: 'r2'
+  n_jobs: -1
+  verbose: 1
+  n_iter: 10
+
+models:
+  - model1:
+      estimator: from sklearn.linear_model import ElasticNet
+      hyper-parameters:
+        alpha: scipy.stats.uniform(0,1)
+        l1_ratio: scipy.stats.uniform(0,1)
+        random_state: '[13]'
+  - model2:
+      estimator: from sklearn.ensemble import RandomForestRegressor
+      hyper-parameters:
+        n_estimators: scipy.stats.randint(50,1000)
+        max_depth: scipy.stats.randint(1,10)
+        random_state: '[13]'
+        # max_features: scipy.stats.uniform(0.6,1)
+  - model3:
+      estimator: from sklearn.neural_network import MLPRegressor
+      # model-run-time:
+      #   n_jobs: 1
+      hyper-parameters:
+        hidden_layer_sizes: '[(10,), (10,10),(20,)]'
+        max_iter: scipy.stats.randint(500, 2000)
+        random_state: '[13]'
+  - model4:
+      estimator: from xgboost import XGBRegressor
+      hyper-parameters:
+        n_estimators: scipy.stats.randint(50,1000)
+        max_depth: scipy.stats.randint(1,10)
+        learning_rate: scipy.stats.uniform(0,1)
+        random_state: '[13]'
+  - model5:
+      estimator: from sklearn.ensemble import ExtraTreesRegressor
+      hyper-parameters:
+        n_estimators: scipy.stats.randint(50,1000)
+        max_depth: scipy.stats.randint(1,10)
+        random_state: '[13]'
+        # max_features: scipy.stats.uniform(0.6,1)
+
+
