@@ -58,6 +58,7 @@ docker-compose down
 ```
 
 ## Connecting to containers
+Open a browser and enter the following URL for the respective service.
 * Python Container:  `http://0.0.0.0:8888`
 * R Container: `http://0.0.0.0:8787`
 * mlflow tracking server: `http://0.0.0.0:5000`
