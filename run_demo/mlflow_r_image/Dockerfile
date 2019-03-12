@@ -2,7 +2,7 @@ FROM rocker/rstudio-stable:latest
 
 ARG MLFLOW_VERSION
 
-RUNRUN echo "\n###\n# BUILDING mlflow_r image with mlflow ${MLFLOW_VERSION}\n###"
+RUN echo "\n###\n# BUILDING mlflow_r image with mlflow ${MLFLOW_VERSION}\n###"
 
 # install miniconda and prereq libraries
 RUN apt-get update && \
