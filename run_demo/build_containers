@@ -1,0 +1,4 @@
+# build demo containers
+
+docker-compose build \
+    --build-arg MLFLOW_VERSION=${MLFLOW_VERSION:-0.8.2}
