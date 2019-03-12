@@ -2,7 +2,7 @@ FROM continuumio/anaconda3:5.3.0
 
 ARG MLFLOW_VERSION
 
-RUN echo BUILDING FOR mlflow ${MLFLOW_VERSION}
+RUN echo "\n###\n# BUILDING mlflow_python image with mlflow ${MLFLOW_VERSION}\n###"
 
 #
 #  install xgboost 

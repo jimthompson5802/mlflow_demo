@@ -23,8 +23,8 @@ directory create two subdirectories called `tracking` and `artifacts`
 /home/userid/mlflow_server/tracking
 /home/userid/mlflow_server/artifacts
 ```
-* Navigate to `./run_demo`
-* Update contents of `setup_environment_variables` to specify values for required directories.  If required specify 
+* Change working directory to `run_demo`
+* Update contents of `./setup_environment_variables` to specify values for required directories.  If required specify 
 version of mlflow package.  See example below.
 ```
 # version of mlflow to install in containers
@@ -40,9 +40,9 @@ export MLFLOW_TRACKING_DIRECTORY=/home/userid/mlflow_server
 * After updating `setup_environment_variables`, execute following command to set  
 environment variables: `. ./setup_environment_variables`
 
-* Run the following command to initially build or rebuild the required Docker images.
+* Run the following command to initially build the required Docker images.
 ```
-bash build_images
+bash ./build_images
 ```
 Note:  On a MacbookPro with 16GB RAM, it took about 13 minutes for the initial 
 build of the three images.
