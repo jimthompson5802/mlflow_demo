@@ -40,14 +40,11 @@ export MLFLOW_TRACKING_DIRECTORY=/home/userid/mlflow_server
 * After updating `setup_environment_variables`, execute following command to set  
 environment variables: `. ./setup_environment_variables`
 
-* Run the following commands.  These commands are required 
-to initially build or rebuild the required Docker images.
+* Run the following command to initially build or rebuild the required Docker images.
 ```
-(cd python_image && bash build_image)
-(cd mlflow_r_image && bash build_image)
-(cd mlflow_server && bash build_image)
+bash build_images
 ```
-Note:  On a MacbookPro with 16GB RAM, it took about 14 minutes for the initial 
+Note:  On a MacbookPro with 16GB RAM, it took about 13 minutes for the initial 
 build of the three images.
 
 
