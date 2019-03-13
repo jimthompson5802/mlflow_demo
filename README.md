@@ -4,6 +4,10 @@ This repo demonstrates the use of the open source project [mlflow](https://mlflo
 and manage results of machine learning experiments.  Docker containers
 provide the run-time environment for this demonstration.
 
+Code used in this demonstration is based on these mflow examples: 
+[`examples/sklearn_elasticnet_wine`](https://github.com/mlflow/mlflow/tree/master/examples/sklearn_elasticnet_wine) 
+and [`examples/r_wine`](https://github.com/mlflow/mlflow/tree/master/examples/r_wine)
+
 ## Demonstration Environment
 ![](images/demo_environment_architecture.png)
 
