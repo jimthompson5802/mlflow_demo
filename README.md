@@ -28,8 +28,8 @@ directory create two subdirectories called `tracking` and `artifacts`
 /home/userid/mlflow_server/artifacts
 ```
 * Change working directory to `run_demo`
-* Update contents of `./setup_environment_variables` to specify values for required directories.  If required specify 
-version of mlflow package.  See example below.
+* Update contents of `./setup_environment_variables` to specify values for three required environment variables. 
+If required specify version of mlflow package.  See example below.
 ```
 # version of mlflow to install in containers
 export MLFLOW_VERSION=0.8.2
@@ -53,7 +53,8 @@ build of the three images.
 
 
 ## Start demonstration containers
-After building the three Docker images, navigate to `./run_demo`
+After building the three Docker images, navigate to `./run_demo`.   Ensure the three required
+environment variables are defined by running `. ./setup_environment_variables`.
 * To bring up the three containers:
 ```
 docker-compose up --detach
