@@ -15,4 +15,4 @@ RUN conda install -c conda-forge xgboost
 # 
 # install mlflow
 #
-RUN pip install mlflow==${MLFLOW_VERSION}
+RUN pip install ${MLFLOW_VERSION}
