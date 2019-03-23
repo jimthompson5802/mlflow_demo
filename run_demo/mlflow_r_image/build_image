@@ -2,6 +2,6 @@
 
 docker build \
     --build-arg MLFLOW_VERSION=${MLFLOW_VERSION:-0.8.2} \
-    --build-arg MLFLOW_R_VERSION_TAG=${MLFLOW_R_VERSION_TAG:-0.8.2} \
+    --build-arg MLFLOW_VERSION_TO_INSTALL=${MLFLOW_VERSION_TO_INSTALL} \
     -t mlflow_r_demo .
 

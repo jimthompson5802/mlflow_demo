@@ -1,11 +1,9 @@
 FROM rocker/rstudio-stable:latest
 
 ARG MLFLOW_VERSION
-ARG MLFLOW_R_VERSION_TAG
+ARG MLFLOW_VERSION_TO_INSTALL
 
 RUN echo "\n###\n# BUILDING mlflow_r image with mlflow ${MLFLOW_VERSION}\n###"
-
-RUN echo "MFLOW R VERSION TAG: ${MLFLOW_R_VERSION_TAG}"
 
 # install miniconda and prereq libraries
 RUN apt-get update && \
@@ -22,12 +20,12 @@ RUN mkdir ~/.R &&\
     echo 'MAKEFLAGS = -j6' >~/.R/Makevars && \
     Rscript -e "install.packages(c('devtools','glmnet','rmarkdown','caTools','bitops'), Ncpus=3)"  \
       -e "library(devtools)" \
-      -e "devtools::install_github('mlflow/mlflow/mlflow/R/mlflow@v${MLFLOW_R_VERSION_TAG}', threads=4)" \
+      -e "devtools::install_github('mlflow/mlflow/mlflow/R/mlflow@v${MLFLOW_VERSION}', threads=4)" \
       -e "Sys.setenv(PATH = paste('/opt/conda/bin',Sys.getenv('PATH'), sep=':'))"  \
       -e "mlflow::mlflow_install()"
 
 # work-around for inability to specify mlflow version in mlflow::mlflow_install()
-RUN /bin/bash -c ". activate r-mlflow && pip uninstall --yes mlflow && pip install ${MLFLOW_VERSION}"
+RUN /bin/bash -c ". activate r-mlflow && pip uninstall --yes mlflow && pip install ${MLFLOW_VERSION_TO_INSTALL}"
 
 
 # create link to user source code
