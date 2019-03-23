@@ -14,9 +14,9 @@ export MLFLOW_TRACKING_DIRECTORY=/path/to/directory/for/tracking-artifacts
 
 ###
 # EXAMPLES
-# MLFLOW_VERSION="mlflow"    Current version in PyPi
-# MLFLOW_VERSION="mlflow==${MLFLOW_VERSION}"   Specific version from PyPi
-# MLFLOW_VERSION="git+https://github.com/mlflow/mlflow.git@vx.y.z#egg=mlflow"  specific version from github
+# MLFLOW_VERSION_TO_INSTALL="mlflow"    Current version in PyPi
+# MLFLOW_VERSION_TO_INSTALL="mlflow==${MLFLOW_VERSION}"   Specific version from PyPi
+# MLFLOW_VERSION_TO_INSTALL="git+https://github.com/mlflow/mlflow.git@vx.y.z#egg=mlflow"  specific version from github
 ###
 # version of mlflow to install in containers
 #export MLFLOW_VERSION_TO_INSTALL="mlflow==${MLFLOW_VERSION}"
