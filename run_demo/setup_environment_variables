@@ -1,6 +1,6 @@
 ###
-# Set up environment variables to control building
-# mlflow Docker containers
+# Set up environment variables to control building and
+# running demonstration mlflow Docker containers
 ###
 
 ###
