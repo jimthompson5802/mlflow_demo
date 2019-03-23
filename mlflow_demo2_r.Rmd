@@ -44,7 +44,7 @@ lambda <- mlflow_param("lambda", 0.5, "numeric")
 
 
 ```{r}
-host_name <- "mlflow_server" #socket.gethostname()
+host_name <- "tracking" #socket.gethostname()
 BASE_URL <- paste0('http://',host_name,':5000')
 
 mlflow_set_tracking_uri(BASE_URL)
