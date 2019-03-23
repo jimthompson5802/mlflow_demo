@@ -12,7 +12,7 @@
 # version of mlflow to install in containers
 export MLFLOW_VERSION="mlflow==x.y.z"
 
-# version of mlflow R support to install in containers - should match above version
+# install mlflow version x.y.z R support to install in containers - should match above version
 export MLFLOW_R_VERSION_TAG=x.y.z
 
 # directory containing demonstration source code
