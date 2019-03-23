@@ -7,7 +7,7 @@
 # EXAMPLES
 # MLFLOW_VERSION="mlflow"    Current version in PyPi
 # MLFLOW_VERSION="mlflow==x.y.z"   Specific version from PyPi
-# MLFLOW_VERSION="git+https://github.com/mlflow/mlflow.git@vx.y.z#egg=mlflow"  specific version from github
+# MLFLOW_VERSION="git+https://github.com/mlflow/mlflow.git@vx.y.z#egg=mlflow"  version x.y.z from github
 ###
 # version of mlflow to install in containers
 export MLFLOW_VERSION="mlflow==x.y.z"

@@ -31,8 +31,17 @@ directory create two subdirectories called `tracking` and `artifacts`
 * Update contents of `./setup_environment_variables` to specify values for three required environment variables. 
 If required specify version of mlflow package.  See example below.
 ```
+###
+# EXAMPLES
+# MLFLOW_VERSION="mlflow"    Current version in PyPi
+# MLFLOW_VERSION="mlflow==x.y.z"   Specific version from PyPi
+# MLFLOW_VERSION="git+https://github.com/mlflow/mlflow.git@vx.y.z#egg=mlflow"  version x.y.z from github
+###
 # version of mlflow to install in containers
-export MLFLOW_VERSION=0.8.2
+export MLFLOW_VERSION="mlflow==x.y.z"
+
+# install mlflow version x.y.z R support to install in containers - should match above version
+export MLFLOW_R_VERSION_TAG=x.y.z
 
 # directory containing demonstration source code
 export MLFLOW_DEMO_DIRECTORY=/home/userid/mlflow_demo
