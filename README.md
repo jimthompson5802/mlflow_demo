@@ -28,26 +28,39 @@ directory create two subdirectories called `tracking` and `artifacts`
 /home/userid/mlflow_server/artifacts
 ```
 * Change working directory to `run_demo`
-* Update contents of `./setup_environment_variables` to specify values for three required environment variables. 
-If required specify version of mlflow package.  See example below.
+* Update contents of `./setup_environment_variables` to specify values for the required environment variables.
+```
+MLFLOW_VERSION
+MLFLOW_VERSION_TO_INSTALL
+MFLOW_DEMO_DIRECTORY
+MLFLOW_TRACKING_DIRECTORY
+```
+ 
+Specify version of mlflow package.  See example below.
 ```
 ###
-# EXAMPLES
-# MLFLOW_VERSION="mlflow"    Current version in PyPi
-# MLFLOW_VERSION="mlflow==x.y.z"   Specific version from PyPi
-# MLFLOW_VERSION="git+https://github.com/mlflow/mlflow.git@vx.y.z#egg=mlflow"  version x.y.z from github
+# Set up environment variables to control building and
+# running demonstration mlflow Docker containers
 ###
-# version of mlflow to install in containers
-export MLFLOW_VERSION="mlflow==x.y.z"
 
-# install mlflow version x.y.z R support to install in containers - should match above version
-export MLFLOW_R_VERSION_TAG=x.y.z
+# mlflow version to install
+export MLFLOW_VERSION=0.9.0
 
 # directory containing demonstration source code
-export MLFLOW_DEMO_DIRECTORY=/home/userid/mlflow_demo
+export MLFLOW_DEMO_DIRECTORY=/path/to/directory/for/local/repo
 
 # directory to hold mlflow tracking and artifacts
-export MLFLOW_TRACKING_DIRECTORY=/home/userid/mlflow_server
+export MLFLOW_TRACKING_DIRECTORY=/path/to/directory/for/tracking-artifacts
+
+###
+# EXAMPLES
+# MLFLOW_VERSION_TO_INSTALL="mlflow"    Current version in PyPi
+# MLFLOW_VERSION_TO_INSTALL="mlflow==${MLFLOW_VERSION}"   Specific version from PyPi
+# MLFLOW_VERSION_TO_INSTALL="git+https://github.com/mlflow/mlflow.git@vx.y.z#egg=mlflow"  specific version from github
+###
+# version of mlflow to install in containers
+#export MLFLOW_VERSION_TO_INSTALL="mlflow==${MLFLOW_VERSION}"
+export MLFLOW_VERSION_TO_INSTALL="git+https://github.com/mlflow/mlflow.git@v${MLFLOW_VERSION}#egg=mlflow"  specific version from github
 
 ```
 * After updating `setup_environment_variables`, execute following command to set  
@@ -62,7 +75,7 @@ build of the three images.
 
 
 ## Start demonstration containers
-After building the three Docker images, navigate to `./run_demo`.   Ensure the three required
+After building the three Docker images, navigate to `./run_demo`.   Ensure the required
 environment variables are defined by running `. ./setup_environment_variables`.
 * To bring up the three containers:
 ```
