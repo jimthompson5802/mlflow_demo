@@ -1,4 +1,4 @@
-FROM continuumio/anaconda3:5.3.0
+FROM continuumio/anaconda3:latest
 
 ARG MLFLOW_VERSION
 
