@@ -3,13 +3,16 @@
 # mlflow Docker containers
 ###
 
+###
+# EXAMPLES
 # MLFLOW_VERSION="mlflow"    Current version in PyPi
 # MLFLOW_VERSION="mlflow==x.y.z"   Specific version from PyPi
-# MLFLOW_VERSION="git+https://github.com/mlflow/mlflow.git@vx.y.z#egg=mlflow"  from github
+# MLFLOW_VERSION="git+https://github.com/mlflow/mlflow.git@vx.y.z#egg=mlflow"  specific version from github
+###
 # version of mlflow to install in containers
 export MLFLOW_VERSION="mlflow==x.y.z"
 
-# version of mlflow to install in containers - should match above version
+# version of mlflow R support to install in containers - should match above version
 export MLFLOW_R_VERSION_TAG=x.y.z
 
 # directory containing demonstration source code
