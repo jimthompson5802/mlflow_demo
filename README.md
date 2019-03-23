@@ -88,9 +88,17 @@ docker-compose down
 
 ## Connecting to containers
 Open a browser and enter the following URL for the respective service.
-* Python Container:  `http://0.0.0.0:8888`
-* R Container: `http://0.0.0.0:8787`
+* Jupyter Notebook Python Container:  `http://0.0.0.0:8888`
+* RStudio Container: `http://0.0.0.0:8787`
 * mlflow tracking server: `http://0.0.0.0:5000`
+
+## Demonstration Programs
+* **mlflow_demo1.ipynb**: Jupyter notebook runs a single machine learning experiment.
+* **mlflow_demo2.ipynb**: Jupyter notebook performs hyper-parameter optimization.
+* **mlflow_demo2_r.Rmd**:  Rmarkdown notebook runs a single machine learning experiment.
+* **mlflow_api_demo.ipynb**: Jupyter notebook creates pandas dataframe from mlflow experiment results.
+* **mlflow_reproducibility.ipynb**: Jupyter notebook that creates results from an earlier experiment. 
+
 
 ## mlflow Demonstration Dashboard
 
