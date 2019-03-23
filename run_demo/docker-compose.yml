@@ -4,7 +4,7 @@ version: '3'
 services:
 
 # Python
-  python:
+  py:
     build: 
       context: .
       dockerfile: python_image/Dockerfile
@@ -45,7 +45,7 @@ services:
 
 
 # mlflow_tracker
-  mlflow_server:
+  tracking:
     build: 
       context: .
       dockerfile: mlflow_server/Dockerfile
