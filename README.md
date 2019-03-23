@@ -91,3 +91,11 @@ Open a browser and enter the following URL for the respective service.
 * Python Container:  `http://0.0.0.0:8888`
 * R Container: `http://0.0.0.0:8787`
 * mlflow tracking server: `http://0.0.0.0:5000`
+
+## mlflow Demonstration Dashboard
+
+### Experiment Summary
+![](images/dashboard_experiment_view.png)
+
+### Run Summary
+![](images/dashboard_run_view.png)
