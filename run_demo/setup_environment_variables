@@ -12,6 +12,10 @@ export MLFLOW_DEMO_DIRECTORY=/path/to/directory/for/local/repo
 # directory to hold mlflow tracking and artifacts
 export MLFLOW_TRACKING_DIRECTORY=/path/to/directory/for/tracking-artifacts
 
+# mflow tracking server URL: file_tracker or db_tracker
+#export MLFLOW_TRACKER_URL=http://file_tracker:5000
+export MLFLOW_TRACKER_URL=http://db_tracker:5001
+
 ###
 # EXAMPLES
 # MLFLOW_VERSION_TO_INSTALL="mlflow"    Current version in PyPi
