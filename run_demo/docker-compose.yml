@@ -68,4 +68,35 @@ services:
         --port 5000
 
 
-    
+  # postgres database
+  pgdb:
+
+    image: postgres:10
+
+    ports:
+      - "5432:5432"
+
+    environment:
+      POSTGRES_PASSWORD: mlflow_pw
+      POSTGRES_USER: mlflow_user
+      POSTGRES_DB: mlflow_db
+
+    volumes:
+      - "${MLFLOW_TRACKING_DIRECTORY:-/tmp}/postgres/data:/var/lib/postgresql/data"
+
+
+  # postgres admin
+  pgadmin:
+
+    image: dpage/pgadmin4
+
+    ports:
+      - "80:80"
+
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "mlflow@gmail.com"
+      PGADMIN_DEFAULT_PASSWORD: pgadmin4
+
+    volumes:
+      - "${MLFLOW_TRACKING_DIRECTORY:-/tmp}/postgres/pgadmin:/var/lib/pgadmin"
+
