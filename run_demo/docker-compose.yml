@@ -73,6 +73,11 @@ services:
         --port 5000
 
 
+###
+# TO DISABLE DATABASE TRACKER COMPONENTS REMOVE
+# OR COMMENT OUT ALL LINES FOLLOWING THIS COMMENT SECTION.
+###
+
 
 # mlflow_tracker - database
   db_tracker:
