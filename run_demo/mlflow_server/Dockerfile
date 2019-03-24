@@ -21,6 +21,7 @@ WORKDIR /app
 RUN curl -L https://github.com/mlflow/mlflow/archive/v${MLFLOW_VERSION}.tar.gz | \
       tar xzfv - --strip 1  && \
     pip install -e . && \
+    pip install sqlalchemy psycopg2 && \
     apt-get update && apt-get install -y gnupg && \
     curl -sL https://deb.nodesource.com/setup_10.x | bash - && \
     apt-get update && apt-get install -y nodejs && \
