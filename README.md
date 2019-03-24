@@ -1,5 +1,9 @@
 # mlflow Demonstration
 
+**IMPORTANT**: The `master` branch represents work-in-progress.  Stable functionality are designated by 
+tags, e.g., v0.1.0, v0.2.0, etc, identified in 
+[_Releases_ section](https://github.com/jimthompson5802/mlflow_demo/releases).
+
 This repo demonstrates the use of the open source project [mlflow](https://mlflow.org), which is used to record 
 and manage results of machine learning experiments.  Docker containers
 provide the run-time environment for this demonstration.
