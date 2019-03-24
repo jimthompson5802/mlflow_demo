@@ -13,7 +13,7 @@ Code used in this demonstration is based on these mflow examples:
 and [`examples/r_wine`](https://github.com/mlflow/mlflow/tree/master/examples/r_wine)
 
 ## Demonstration Environment
-![](images/demo_environment_architecture.png)
+![](images/demo_environment_with_db_architecture.png)
 
 
 ## System Requirements
