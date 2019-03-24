@@ -44,8 +44,8 @@ services:
       - "${MLFLOW_TRACKING_DIRECTORY:-/tmp}/artifacts:/artifacts"
 
 
-# mlflow_tracker
-  tracking:
+# mlflow_tracker - file store
+  file_tracker:
     build: 
       context: .
       dockerfile: mlflow_server/Dockerfile
@@ -54,7 +54,6 @@ services:
     
     ports:
       - "5000:5000"
-      - "5001:5001"
 
     volumes:
       - "${MLFLOW_TRACKING_DIRECTORY:-/tmp}/tracking:/tracking"
@@ -62,12 +61,33 @@ services:
 
     command: >
       mlflow server
-        --backend-store-uri postgresql://mlflow_user:mlflow_pw@pgdb/mlflow_db
+        --file-store /tracking
         --default-artifact-root /artifacts 
         --host 0.0.0.0
         --port 5000
 
-#        --file-store /tracking
+
+
+# mlflow_tracker - database
+  db_tracker:
+    build:
+      context: .
+      dockerfile: mlflow_server/Dockerfile
+
+    image: mlflow_server
+
+    ports:
+      - "5001:5001"
+
+    volumes:
+      - "${MLFLOW_TRACKING_DIRECTORY:-/tmp}/artifacts:/artifacts"
+
+    command: >
+      mlflow server
+        --backend-store-uri postgresql://mlflow_user:mlflow_pw@pgdb/mlflow_db
+        --default-artifact-root /artifacts
+        --host 0.0.0.0
+        --port 5001
 
 
   # postgres database
