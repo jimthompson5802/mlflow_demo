@@ -13,6 +13,8 @@ export MLFLOW_DEMO_DIRECTORY=/path/to/directory/for/local/repo
 export MLFLOW_TRACKING_DIRECTORY=/path/to/directory/for/tracking-artifacts
 
 # mflow tracking server URL: file_tracker or db_tracker
+# use MLFLOW_TRACKER_URL=http://file_tracker:5000 for file-based tracker server
+# use MLFLOW_TRACKER_URL=http://db_tracker:5001 for Postgres SQL database tracker server
 export MLFLOW_TRACKER_URL=http://db_tracker:5001
 
 ###
@@ -21,8 +23,10 @@ export MLFLOW_TRACKER_URL=http://db_tracker:5001
 # MLFLOW_VERSION_TO_INSTALL="mlflow==${MLFLOW_VERSION}"   Specific version from PyPi
 # MLFLOW_VERSION_TO_INSTALL="git+https://github.com/mlflow/mlflow.git@vx.y.z#egg=mlflow"  specific version from github
 ###
-# version of mlflow to install in containers
+# uncomment following to install mlflow from pypi
 #export MLFLOW_VERSION_TO_INSTALL="mlflow==${MLFLOW_VERSION}"
+
+# uncomment following to install mlflow from github
 export MLFLOW_VERSION_TO_INSTALL="git+https://github.com/mlflow/mlflow.git@v${MLFLOW_VERSION}#egg=mlflow"  specific version from github
 
 
