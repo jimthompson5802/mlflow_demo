@@ -15,15 +15,16 @@ and [`examples/r_wine`](https://github.com/mlflow/mlflow/tree/master/examples/r_
 ## Demonstration Environment
 ![](images/demo_environment_with_db_architecture.png)
 
-
 ## System Requirements
 * [Docker](https://docs.docker.com/develop/)
 * [Docker Compose](https://docs.docker.com/compose/overview/)
 
 Work performed with Docker for Mac Version 2.0.0.3 (31259)
 
-
 ## Environment Setup
+
+_Setup described in this section does not consider security requirements and is suitable only 
+for demonstration purposes with non-sensitive data.  Changes are required for any production deployment_.
 
 ### Set up local storage
 * Clone repo to local computer.  Note directory for the local repo, e.g., `/home/userid/mlflow_demo`
@@ -94,6 +95,14 @@ Note:  On a MacbookPro with 16GB RAM, it takes 10 to 13 minutes for the initial
 build of the images.
 
 ### Postgres SQL database tracker components
+
+Database Docker components:
+
+[Postgres SQL Image](https://hub.docker.com/_/postgres)
+
+[Web-based Postgres Administration Tool](https://hub.docker.com/r/dpage/pgadmin4) 
+
+Perform only one of the following two tasks.
 
 * To disable the database tracker components, open `docker-compose.yml` file and find 
 this string `# TO DISABLE DATABASE TRACKER COMPONENTS REMOVE` and follow instructions.  
