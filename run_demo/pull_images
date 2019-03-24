@@ -3,7 +3,7 @@
 #
 
 # pull postgres database image
-docker pull postgres:10
+docker-compose  pull pgdb
 
 # pull postgres admin utility
-docker pull dpage/pgadmin4
+docker-compose  pull pgadmin
