@@ -1,9 +1,8 @@
 version: '3'
 
-
 services:
 
-# Python
+# container for python server
   py:
     build: 
       context: .
@@ -27,7 +26,7 @@ services:
           --allow-root --password='' --NotebookApp.token=''
           --notebook-dir=/opt/project
 
-# R
+# container for R server
   r:
     build: 
       context: .
@@ -35,22 +34,19 @@ services:
 
     image: mlflow_r_demo
 
-    
     ports:
       - "8787:8787"
 
     environment:
-      MLFLOW_TRACKING_URI: ${MLFLOW_TRACKING_URI}
-
-    environment:
       DISABLE_AUTH:  'true'
+      MLFLOW_TRACKING_URI: "${MLFLOW_TRACKING_URI}"
 
     volumes:
       - "${MLFLOW_DEMO_DIRECTORY:-/tmp}:/home/rstudio/project"
       - "${MLFLOW_TRACKING_DIRECTORY:-/tmp}/artifacts:/artifacts"
 
 
-# mlflow_tracker - file store
+# container for mlflow_tracker - file store
   file_tracker:
     build: 
       context: .
@@ -79,7 +75,7 @@ services:
 ###
 
 
-# mlflow_tracker - database
+# container for mlflow_tracker - database
   db_tracker:
     build:
       context: .
@@ -101,7 +97,7 @@ services:
         --port 5001
 
 
-  # postgres database
+# container for postgres database server
   pgdb:
 
     image: postgres:10
@@ -118,7 +114,7 @@ services:
       - "${MLFLOW_TRACKING_DIRECTORY:-/tmp}/postgres/data:/var/lib/postgresql/data"
 
 
-  # postgres admin
+# container for postgres admin server
   pgadmin:
 
     image: dpage/pgadmin4
