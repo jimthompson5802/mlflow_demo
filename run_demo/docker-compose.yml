@@ -15,7 +15,7 @@ services:
       - "8888:8888"
 
     environment:
-      MLFLOW_TRACKER_URL: ${MLFLOW_TRACKER_URL}
+      MLFLOW_TRACKING_URI: ${MLFLOW_TRACKING_URI}
 
     volumes:
       - "${MLFLOW_DEMO_DIRECTORY:-/tmp}:/opt/project"
@@ -40,7 +40,7 @@ services:
       - "8787:8787"
 
     environment:
-      MLFLOW_TRACKER_URL: ${MLFLOW_TRACKER_URL}
+      MLFLOW_TRACKING_URI: ${MLFLOW_TRACKING_URI}
 
     environment:
       DISABLE_AUTH:  'true'
