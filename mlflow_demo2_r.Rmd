@@ -46,7 +46,7 @@ lambda <- mlflow_param("lambda", 0.5, "numeric")
 ```{r}
 
 
-mlflow_set_tracking_uri("http://db_tracker:5001")
+mlflow_set_tracking_uri("http://mlflow_tracker:5000")
 mlflow_get_tracking_uri()
 
 

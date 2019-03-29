@@ -18,15 +18,7 @@ ENV PATH /opt/conda/bin:$PATH
 # install R prereq packages and R mlflow support
 RUN mkdir ~/.R &&\
     echo 'MAKEFLAGS = -j6' >~/.R/Makevars && \
-    Rscript -e "install.packages(c('devtools','glmnet','rmarkdown','caTools','bitops'), Ncpus=3)"  \
-      -e "library(devtools)" \
-      -e "devtools::install_github('mlflow/mlflow/mlflow/R/mlflow@v${MLFLOW_VERSION}', threads=4)" \
-      -e "Sys.setenv(PATH = paste('/opt/conda/bin',Sys.getenv('PATH'), sep=':'))"  \
-      -e "mlflow::mlflow_install()"
-
-# work-around for inability to specify mlflow version in mlflow::mlflow_install()
-RUN /bin/bash -c ". activate r-mlflow && pip uninstall --yes mlflow && pip install ${MLFLOW_VERSION_TO_INSTALL}"
-
+    Rscript -e "install.packages(c('mlflow','glmnet','rmarkdown','caTools','bitops'), Ncpus=3)"
 
 # create link to user source code
 RUN cd /home/rstudio && \
