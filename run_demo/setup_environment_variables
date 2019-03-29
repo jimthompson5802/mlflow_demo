@@ -12,10 +12,12 @@ export MLFLOW_DEMO_DIRECTORY=/path/to/directory/for/local/repo
 # directory to hold mlflow tracking and artifacts
 export MLFLOW_TRACKING_DIRECTORY=/path/to/directory/for/tracking-artifacts
 
-# mflow tracking server URL: file_tracker or db_tracker
-# use MLFLOW_TRACKING_URI=http://file_tracker:5000 for file-based tracker server
-# use MLFLOW_TRACKING_URI=http://db_tracker:5001 for Postgres SQL database tracker server
-export MLFLOW_TRACKING_URI=http://db_tracker:5001
+# mflow tracking server URI
+export MLFLOW_TRACKING_URI=http://mlflow_tracker:5000
+
+# backend store
+#export MLFLOW_BACKEND_STORE=postgresql://mlflow_user:mlflow_pw@pgdb/mlflow_db
+export MLFLOW_BACKEND_STORE=/tracking
 
 ###
 # EXAMPLES
