@@ -1,12 +1,16 @@
 #!/bin/sh
 # wait-for-postgres.sh
-# Simple delay to wait til Postgres database is up
+# Loop until Postgres db is available
 
 set -e -x
 
 cmd="$@"
 
-sleep 20
+# loop until the connection to Postgres is available
+until python /test_pgdb_connection.py; do
+  >&2 echo "Postgres is unavailable - sleeping"
+  sleep 1
+done
 
-echo "Assume Postgres is up - executing command"
+>&2 echo "Postgres is up - executing command"
 exec $cmd
