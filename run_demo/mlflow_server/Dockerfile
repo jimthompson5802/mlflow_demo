@@ -29,3 +29,4 @@ RUN pip install ${MLFLOW_VERSION_TO_INSTALL} sqlalchemy==1.3.0 psycopg2-binary
 #    npm run build
 
 COPY wait-for-pgdb.sh /
+COPY test_pgdb_connection.py /
