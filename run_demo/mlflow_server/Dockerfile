@@ -1,4 +1,4 @@
-FROM continuumio/miniconda
+FROM continuumio/miniconda3
 
 ARG MLFLOW_VERSION
 ARG MLFLOW_VERSION_TO_INSTALL
@@ -27,3 +27,5 @@ RUN pip install ${MLFLOW_VERSION_TO_INSTALL} sqlalchemy==1.3.0 psycopg2-binary
 #    cd mlflow/server/js && \
 #    npm install && \
 #    npm run build
+
+COPY wait-for-pgdb.sh /
